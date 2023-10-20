@@ -2765,3 +2765,5 @@ Q.idea/sonarlint/securityhotspotstore/1/1/11bd51f4e17a279152c440f5d8658d9821248f
 Q.idea/sonarlint/securityhotspotstore/1/3/130d64479a386b0af2ebd1bc4184f7f3cb6d87b5,6\b\6b842dd7f8f014a8541361ee3fd7bac1d0d1e9ff
 U
 %测试/postman/postman基础功能.md,2\d\2d591f57be4c59ce6b0c3ed35747bf604e8117a1
+I
+测试/swagger/swagger.md,a\6\a613aef5f5a76c4a40576af2a30fabc2462f6189
