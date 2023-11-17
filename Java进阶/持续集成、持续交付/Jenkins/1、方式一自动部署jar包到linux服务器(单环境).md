@@ -74,6 +74,7 @@ pipeline{
                         """
                         echo '文件上传成功'
                         // 运行linux服务器上的sh脚本, 传入jar包名作为变量
+                        // 使用ssh命令在远程服务器上运行多行命令时, 需要使用 << EOF将多条命令合并
                         sh """
                             ssh ${username}@${serverIp} << EOF
                             cd ${targetPath}
