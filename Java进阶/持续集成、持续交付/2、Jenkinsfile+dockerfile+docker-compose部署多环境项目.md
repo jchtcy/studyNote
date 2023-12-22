@@ -364,7 +364,10 @@ pipeline{
         stage('deploy') {
             steps {
                 script {
-                    sh "ssh ${username}@${serverIp} rm -rf ${targetPath}/tpplatform/admin/jar/tpplatform-admin.jar;exit"
+                    sh """
+                        ssh ${username}@${serverIp} rm -rf ${targetPath}/tpplatform/admin/jar/*
+                        exit
+                    """
                     echo '旧jar包删除成功'
                     sh """
                         scp ${sourcePath}/tpplatform-admin/target/tpplatform-admin.jar ${username}@${serverIp}:${targetPath}/tpplatform/admin/jar
