@@ -226,7 +226,7 @@ WORKDIR /home/tpplatform
 # 复制jar文件到路径
 COPY ./jar/tpplatform-admin.jar /home/tpplatform/tpplatform-admin.jar
 # 启动
-ENTRYPOINT ["java","-jar","tpplatform-admin.jar","--spring.profiles.active=druid"]
+ENTRYPOINT ["java","-jar","tpplatform-admin.jar"]
 
 # 如果是生成环境把druid改为prod
 ````
@@ -317,14 +317,14 @@ pipeline{
 
                     if(targetBranch  == "master"){ // 生产环境
                         profiles = "prod"
-                        serverIp = "生成环境服务器ip"
+                        serverIp = "10.110.1.115"
                     } else if(targetBranch  == "dev"){ //开发环境
                         profiles = "druid"
-                        serverIp = "开发环境服务器ip"
+                        serverIp = "10.110.1.112"
                     }
                 }
                 echo "拉取${targetBranch}分支代码, 部署${profiles}环境"
-                git branch: "${targetBranch}", credentialsId: 'git证书', url: 'git地址'
+                git branch: "${targetBranch}", credentialsId: 'e8683dca-a182-4756-849e-c830b839f5c8', url: 'http://10.110.8.205:8032/PMPlatform/TPPlatform.git'
                 echo "拉取${targetBranch}分支代码成功"
             }
         }
@@ -333,7 +333,7 @@ pipeline{
             steps{
 
                 sh "echo 开始打包。。。"
-                sh "mvn clean package -U -Dmaven.test.skip=true"
+                sh "mvn clean package -P ${profiles} -U -Dmaven.test.skip=true"
                 sh "echo 打包成功。"
 
             }
