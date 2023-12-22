@@ -294,7 +294,7 @@ services:
 //目标服务器ip和路径，根据实际情况修改
 String serverIp = ""
 String username = 'root'
-String sourcePath = '/var/lib/jenkins/workspace/PMPlatform/TPPlatform'
+String sourcePath = '/var/lib/jenkins/workspace/PMPlatform_tpplatform_' + env.BRANCH_NAME
 String targetPath = '/usr/local/src/docker'
 String profiles = ""
 string targetBranch = ""
