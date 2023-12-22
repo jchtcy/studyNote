@@ -317,14 +317,14 @@ pipeline{
 
                     if(targetBranch  == "master"){ // 生产环境
                         profiles = "prod"
-                        serverIp = "10.110.1.115"
+                        serverIp = "生成环境ip"
                     } else if(targetBranch  == "dev"){ //开发环境
                         profiles = "druid"
-                        serverIp = "10.110.1.112"
+                        serverIp = "开发环境ip"
                     }
                 }
                 echo "拉取${targetBranch}分支代码, 部署${profiles}环境"
-                git branch: "${targetBranch}", credentialsId: 'e8683dca-a182-4756-849e-c830b839f5c8', url: 'http://10.110.8.205:8032/PMPlatform/TPPlatform.git'
+                git branch: "${targetBranch}", credentialsId: 'git证书', url: 'git项目地址'
                 echo "拉取${targetBranch}分支代码成功"
             }
         }
