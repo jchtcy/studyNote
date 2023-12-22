@@ -32,7 +32,7 @@ chmod u+x ./restart.sh
 # 三、编写Jenkinsfile文件
 ````
 //linux服务器ip
-def String serverIp = '10.110.1.112'
+def String serverIp = 'linux服务器ip'
 //登录的用户名
 def String username = 'root'
 //打包后jar包所在地址
@@ -47,7 +47,7 @@ pipeline{
     stages{
         stage('pull code'){
             steps{
-                git branch: 'dev', credentialsId: 'e8683dca-a182-4756-849e-c830b839f5c8', url: 'http://10.110.8.205:8032/PMPlatform/TPPlatform.git'
+                git branch: 'dev', credentialsId: 'git证书', url: 'git地址'
                 echo '拉取成功'
             }
         }
