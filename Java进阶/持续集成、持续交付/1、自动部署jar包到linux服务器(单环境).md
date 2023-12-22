@@ -94,7 +94,7 @@ pipeline{
 ````
 * 2、构建触发器
 ````
-选择 Build when a change is pushed to GitLab. GitLab webhook URL: http://10.110.3.100:8080/project/PMPlatform/TPPlatform
+选择 Build when a change is pushed to GitLab. GitLab webhook URL: git地址
 选中
 1、Push Events
 2、Opened Merge Request Events
