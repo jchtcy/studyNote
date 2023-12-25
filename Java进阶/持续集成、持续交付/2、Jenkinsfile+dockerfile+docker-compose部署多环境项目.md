@@ -284,6 +284,7 @@ services:
       - "8080:8080"
     volumes:
       - /usr/local/src/tpplatform:/usr/local/src/tpplatform
+      - /usr/share/fonts/chinese/:/usr/share/fonts/chinese/
     network_mode: "host"
     depends_on:
       - tpplatform-redis
